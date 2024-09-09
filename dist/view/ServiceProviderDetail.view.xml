@@ -1,0 +1,114 @@
+<mvc:View controllerName="com.sadara.Services.controller.ServiceProviderDetail" xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core"
+	xmlns="sap.uxap" xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns:m="sap.m" xmlns:f="sap.f" displayBlock="true">
+	<ObjectPageLayout id="ObjectPageLayout" showTitleInHeaderContent="true" alwaysShowContentHeader="false" preserveHeaderStateOnScroll="false"
+		headerContentPinnable="true" isChildPage="true" upperCaseAnchorBar="false">
+		<headerTitle>
+			<ObjectPageDynamicHeaderTitle>
+				<expandedHeading>
+					<m:Title text="{localModel>/SERVICEPROVIDER_NAME}" wrapping="true" class="sapUiSmallMarginEnd"/>
+				</expandedHeading>
+				<snappedHeading>
+					<m:FlexBox wrap="Wrap" fitContainer="true" alignItems="Center">
+						<m:FlexBox wrap="NoWrap" fitContainer="true" alignItems="Center" class="sapUiTinyMarginEnd">
+							<m:Title text="{localModel>/SERVICEPROVIDER_NAME}" wrapping="true" class="sapUiTinyMarginEnd"/>
+						</m:FlexBox>
+					</m:FlexBox>
+				</snappedHeading>
+				<navigationActions>
+					<m:VBox justifyContent="Center" class="sapUiSmallMarginEnd">
+						<m:Text class="deleteditems" text="{path:'localModel>/DELETIONFLAG',formatter: '.formatter.Delete'}"/>
+					</m:VBox>
+					<m:OverflowToolbarButton type="Transparent" icon="sap-icon://decline" press="handleClose" tooltip="Close middle column"
+						visible="{= ${/actionButtonsInfo/midColumn/closeColumn} !== null }"/>
+				</navigationActions>
+			</ObjectPageDynamicHeaderTitle>
+		</headerTitle>
+		<headerContent>
+			<m:FlexBox wrap="Wrap" fitContainer="true" alignItems="Stretch">
+				<layout:VerticalLayout>
+					<m:HBox class="sapUiSmallMarginEnd">
+						<m:Label text="Provider ID :"/>
+						<m:ObjectIdentifier title="{localModel>/SERVICEPROVIDER_ID}"/>
+					</m:HBox>
+					<m:HBox class="sapUiSmallMarginEnd">
+						<m:Label text="Vendor ID :"/>
+						<m:ObjectIdentifier title=" {localModel>/SADARAVENDOR_ID}"/>
+					</m:HBox>
+				</layout:VerticalLayout>
+				<layout:VerticalLayout>
+					<m:HBox class="sapUiSmallMarginEnd">
+						<m:Label text="Created On :"/>
+						<m:ObjectIdentifier title="{path: 'localModel>/CREATIONDATETIME',type: 'sap.ui.model.type.Date', formatOptions: {pattern: 'MM/dd/yy'}}"/>
+					</m:HBox>
+					<m:HBox justifyContent="Center" class="sapUiSmallMarginEnd">
+						<m:Label text="Created By :"/>
+						<m:ObjectIdentifier title="{localModel>/CREATEDBY}"/>
+					</m:HBox>
+				</layout:VerticalLayout>
+				<layout:VerticalLayout>
+					<m:HBox class="sapUiSmallMarginEnd">
+						<m:Label text="Updated On :"/>
+						<m:ObjectIdentifier title="{path: 'localModel>/UPDATEDATETIME',type: 'sap.ui.model.type.Date', formatOptions: {pattern: 'MM/dd/yy'}}"/>
+					</m:HBox>
+					<m:HBox justifyContent="Center" class="sapUiSmallMarginEnd">
+						<m:Label text="Updated By :"/>
+						<m:ObjectIdentifier title="{localModel>/UPDATEDBY}"/>
+					</m:HBox>
+				</layout:VerticalLayout>
+			</m:FlexBox>
+		</headerContent>
+		<sections>
+			<ObjectPageSection title="Services">
+				<subSections>
+					<ObjectPageSubSection>
+						<m:Table id="serviceproviderdetail" items="{SproviderModel>/CV_PROVIDER_DETAILS}" growing="true" growingThreshold="10">
+							<m:headerToolbar>
+								<m:OverflowToolbar>
+									<m:ToolbarSpacer/>
+									<m:SearchField id="searchservice" search="onSearch" width="17.5rem"/>
+								</m:OverflowToolbar>
+							</m:headerToolbar>
+							<m:columns>
+								<m:Column>
+									<m:Text text="Service Name"/>
+								</m:Column>
+								<m:Column>
+									<m:Text text="Service Description"/>
+								</m:Column>
+								<m:Column minScreenWidth="Tablet" demandPopin="true">
+									<m:Text text="Category Name"/>
+								</m:Column>
+								<m:Column minScreenWidth="Tablet" demandPopin="true">
+									<m:Text text="Created By"/>
+								</m:Column>
+								<m:Column minScreenWidth="Tablet" demandPopin="true">
+									<m:Text text="Created On"/>
+								</m:Column>
+								<m:Column minScreenWidth="Desktop" demandPopin="true">
+									<m:Text text="Updated By"/>
+								</m:Column>
+								<m:Column minScreenWidth="Desktop" demandPopin="true">
+									<m:Text text="Updated On"/>
+								</m:Column>
+							</m:columns>
+							<m:items>
+								<m:ColumnListItem vAlign="Middle">
+									<m:cells>
+										<m:ObjectIdentifier title="{SproviderModel>SERVICE_NAME}"/>
+										<m:ExpandableText overflowMode="Popover" class="sapUiTinyMarginBottom sapUiTinyMarginTop" maxCharacters="50"
+											text="{SproviderModel>SERVICE_DESCRIPTION}"/>
+										<m:Text text="{SproviderModel>SERVICECATEGORY_NAME}"/>
+										<m:Text text="{SproviderModel>SERVICE_CREATEDBY}"/>
+										<m:ObjectIdentifier title="{path:'SproviderModel>SERVICE_CREATIONDATETIME', formatter: '.formatter.formatDate'}"/>
+										<m:Text text="{SproviderModel>SERVICE_UPDATEDBY}"/>
+										<m:ObjectIdentifier title="{path:'SproviderModel>SERVICE_UPDATEDATETIME', formatter: '.formatter.formatDate'}"/>
+									</m:cells>
+								</m:ColumnListItem>
+							</m:items>
+						</m:Table>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+		</sections>
+	</ObjectPageLayout>
+</mvc:View>

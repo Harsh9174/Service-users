@@ -1,0 +1,30 @@
+/* Enter your custom styles here */
+
+.deleteditems {
+    color: red;
+}
+.servicetoolbar.sapMIBar{
+    height: 2.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+}
+.servicetoolbars.sapMIBar{
+    height: 4.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+}
+.sapFDynamicPageTitle {
+	border: 2px solid black;
+}
+.sapMLnk:not(.sapMLnkDsbl) {
+    text-shadow: 0 0 .125rem #fff;
+    color: blue;
+}
+html.sap-desktop .sapMLnk:not(.sapMLnkDsbl):hover:not(:active):not(:focus) {
+    color: #0000ff;
+    text-decoration: underline;
+}

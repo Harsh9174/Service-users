@@ -1,0 +1,79 @@
+<mvc:View controllerName="com.sadara.Services.controller.ServiceProvider" xmlns:core="sap.ui.core" xmlns:fb="sap.ui.comp.filterbar"
+	xmlns="sap.uxap" xmlns:layout="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns:m="sap.m">
+	<m:Page showHeader="false">
+		<ObjectPageLayout id="ObjectPageLayout" showTitleInHeaderContent="true" upperCaseAnchorBar="false">
+			<headerTitle>
+				<ObjectPageDynamicHeaderTitle>
+					<expandedHeading>
+						<m:Title text="Service Provider" wrapping="true"/>
+					</expandedHeading>
+					<snappedHeading>
+						<m:FlexBox fitContainer="true" alignItems="Center">
+							<m:Title text="Service Provider" wrapping="true"/>
+						</m:FlexBox>
+					</snappedHeading>
+					<actions>
+						<m:Button icon="sap-icon://open-command-field" type="Emphasized" text="Services" press="onService"/>
+					</actions>
+				</ObjectPageDynamicHeaderTitle>
+			</headerTitle>
+			<headerContent>
+				<fb:FilterBar id="filterbar" persistencyKey="myPersKey" useToolbar="false" search="onGoPress" filterChange=".onFilterChange"
+					afterVariantLoad=".onAfterVariantLoad">
+					<fb:filterGroupItems>
+						<fb:FilterGroupItem name="Name" label="Service Provider" groupName="Group1" visibleInFilterBar="true">
+							<fb:control>
+								<m:SearchField id="searchserviceprovider" search="onSearch" width="17.5rem"/>
+							</fb:control>
+						</fb:FilterGroupItem>
+						<fb:FilterGroupItem name="Deleyed Items" label="Deletion Flag" groupName="Group1" visibleInFilterBar="true">
+							<fb:control>
+								<m:ComboBox id="mydeleteditems">
+									<core:Item key="X" text="Deleted"/>
+									<core:Item key="" text="Non-Deleted"/>
+								</m:ComboBox>
+							</fb:control>
+						</fb:FilterGroupItem>
+					</fb:filterGroupItems>
+				</fb:FilterBar>
+			</headerContent>
+			<sections>
+				<ObjectPageSection>
+					<subSections>
+						<ObjectPageSubSection>
+							<blocks>
+								<m:Table id="productsTable" sticky="ColumnHeaders,HeaderToolbar" mode="SingleSelectMaster" itemPress="onListItemPress" inset="false"
+									items="{SproviderModel>/SERVICEPROVIDERMASTER}" class="sapFDynamicPageAlignContent" width="auto" growing="true" growingThreshold="15">
+									<m:columns>
+										<m:Column minScreenWidth="Desktop" demandPopin="true">
+											<m:Text text="Provider Name"/>
+										</m:Column>
+										<m:Column minScreenWidth="Desktop" demandPopin="true">
+											<m:Text text="Vendor Id"/>
+										</m:Column>
+										<m:Column minScreenWidth="Tablet" demandPopin="true">
+											<m:Text text="Created By"/>
+										</m:Column>
+										<m:Column minScreenWidth="Tablet" demandPopin="true" hAlign="End">
+											<m:Text text="Deletion Flag"/>
+										</m:Column>
+									</m:columns>
+									<m:items>
+										<m:ColumnListItem type="Navigation">
+											<m:cells>
+												<m:ObjectIdentifier title="{SproviderModel>SERVICEPROVIDER_NAME}"/>
+												<m:ObjectIdentifier text="{SproviderModel>SADARAVENDOR_ID}"/>
+												<m:ObjectIdentifier text="{SproviderModel>CREATEDBY}"/>
+												<m:Text class="deleteditems" text="{path: 'SproviderModel>DELETIONFLAG' , formatter: '.formatter.Delete'}"/>
+											</m:cells>
+										</m:ColumnListItem>
+									</m:items>
+								</m:Table>
+							</blocks>
+						</ObjectPageSubSection>
+					</subSections>
+				</ObjectPageSection>
+			</sections>
+		</ObjectPageLayout>
+	</m:Page>
+</mvc:View>
