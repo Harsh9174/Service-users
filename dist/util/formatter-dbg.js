@@ -31,6 +31,19 @@ sap.ui.define([
 				return "";
 			}
 			return value;
+		},
+			ProviderCategorydes:function(value){
+		if (value == "I+") {
+			return "I+ :Approved Contractors for Projects with values equal to or greater than US$200MM"
+		} else if (value == "I") {
+			return "I: Approved Contractors for Projects with values more than US$140MM and less than US$200MM"
+		} else if (value == "II") {
+			return "III: Approved Contractors for Projects with values more than US$80MM and less than US$140MM"
+		} else if (value == "III"){
+			return "IV:Approved Contractors for Projects with values more than US$40MM up to US$80MM"
+		} else{
+			return ""
 		}
+}
 	};
 });

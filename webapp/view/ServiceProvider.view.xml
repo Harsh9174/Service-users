@@ -45,13 +45,16 @@
 								<m:Table id="productsTable" sticky="ColumnHeaders,HeaderToolbar" mode="SingleSelectMaster" itemPress="onListItemPress" inset="false"
 									items="{SproviderModel>/SERVICEPROVIDERMASTER}" class="sapFDynamicPageAlignContent" width="auto" growing="true" growingThreshold="15">
 									<m:columns>
-										<m:Column minScreenWidth="Desktop" demandPopin="true">
+										<m:Column minScreenWidth="Tablet" demandPopin="true">
 											<m:Text text="Provider Name"/>
 										</m:Column>
 										<m:Column minScreenWidth="Desktop" demandPopin="true">
 											<m:Text text="Vendor Id"/>
 										</m:Column>
-										<m:Column minScreenWidth="Tablet" demandPopin="true">
+											<m:Column minScreenWidth="Desktop" demandPopin="true">
+											<m:Text text="Provider Category"/>
+										</m:Column>
+										<m:Column minScreenWidth="Desktop" demandPopin="true">
 											<m:Text text="Created By"/>
 										</m:Column>
 										<m:Column minScreenWidth="Tablet" demandPopin="true" hAlign="End">
@@ -62,7 +65,8 @@
 										<m:ColumnListItem type="Navigation">
 											<m:cells>
 												<m:ObjectIdentifier title="{SproviderModel>SERVICEPROVIDER_NAME}"/>
-												<m:ObjectIdentifier text="{SproviderModel>SADARAVENDOR_ID}"/>
+													<m:ObjectIdentifier title="{SproviderModel>SADARAVENDOR_ID}"/>
+												<m:ObjectIdentifier text="{SproviderModel>PROVIDER_CATEGORY}"/>
 												<m:ObjectIdentifier text="{SproviderModel>CREATEDBY}"/>
 												<m:Text class="deleteditems" text="{path: 'SproviderModel>DELETIONFLAG' , formatter: '.formatter.Delete'}"/>
 											</m:cells>

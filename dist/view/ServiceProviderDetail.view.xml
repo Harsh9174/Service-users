@@ -34,6 +34,7 @@
 						<m:Label text="Vendor ID :"/>
 						<m:ObjectIdentifier title=" {localModel>/SADARAVENDOR_ID}"/>
 					</m:HBox>
+				
 				</layout:VerticalLayout>
 				<layout:VerticalLayout>
 					<m:HBox class="sapUiSmallMarginEnd">
@@ -55,7 +56,13 @@
 						<m:ObjectIdentifier title="{localModel>/UPDATEDBY}"/>
 					</m:HBox>
 				</layout:VerticalLayout>
-			</m:FlexBox>
+		</m:FlexBox>
+			<m:FlexBox wrap="Wrap" fitContainer="true" alignItems="Stretch">
+					<m:HBox class="sapUiSmallMarginEnd">
+						<m:Label text="Provider Category :"/>
+						<m:ObjectIdentifier title="{path:'localModel>/PROVIDER_CATEGORY' ,formatter:'.formatter.ProviderCategorydes'}"/>
+					</m:HBox>
+					</m:FlexBox>
 		</headerContent>
 		<sections>
 			<ObjectPageSection title="Services">
@@ -75,10 +82,10 @@
 								<m:Column>
 									<m:Text text="Service Description"/>
 								</m:Column>
-								<m:Column minScreenWidth="Tablet" demandPopin="true">
-									<m:Text text="Category Name"/>
+								<m:Column minScreenWidth="Desktop" demandPopin="true">
+									<m:Text text="Proponent Organization"/>
 								</m:Column>
-								<m:Column minScreenWidth="Tablet" demandPopin="true">
+								<m:Column minScreenWidth="Desktop" demandPopin="true">
 									<m:Text text="Created By"/>
 								</m:Column>
 								<m:Column minScreenWidth="Tablet" demandPopin="true">

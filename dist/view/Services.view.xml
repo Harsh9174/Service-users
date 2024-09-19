@@ -44,16 +44,16 @@
 		<m:Table id="productsTable" sticky="ColumnHeaders"  mode="SingleSelectMaster" itemPress="onListItemPress" inset="false" items="{SproviderModel>/CV_SERVICES_MASTER}"
 			class="sapFDynamicPageAlignContent" width="auto" growing="true" growingThreshold="15">
 			<m:columns>
-				<m:Column  >
+				<m:Column minScreenWidth="Tablet" demandPopin="true" >
 					<m:Text text="Services"/>
 				</m:Column>
-					<m:Column>
-					<m:Text text="Category Name"/>
+					<m:Column minScreenWidth="Desktop" demandPopin="true">
+					<m:Text text="Proponent Organization"/>
 				</m:Column>
-					<m:Column>
+					<m:Column minScreenWidth="Desktop" demandPopin="true">
 					<m:Text text="Description"/>
-				</m:Column>
-				<m:Column hAlign="End">
+				</m:Column >
+				<m:Column hAlign="End" minScreenWidth="Tablet" demandPopin="true">
 					<m:Text text="Deletion Flag"/>
 				</m:Column>
 			</m:columns>

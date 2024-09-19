@@ -14,7 +14,7 @@ sap.ui.define([
 			var that = this;
 			this.oArgs = oEvent.getParameter("arguments").Services;
 			var oModel = this.getOwnerComponent().getModel("SproviderModel");
-			oModel.read("/SERVICESMASTER(" + this.oArgs + ")", {
+			oModel.read("/CV_SERVICES_MASTER(" + this.oArgs + ")", {
 				success: function (odata) {
 					var oLocalModel = new sap.ui.model.json.JSONModel();
 					oLocalModel.setData(odata);

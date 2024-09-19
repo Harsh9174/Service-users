@@ -1,17 +1,17 @@
 {
     "resources": [
         {
-            "name": "manifest.json"
+            "name": "controller/Services-dbg.controller.js",
+            "isDebug": true
         },
         {
-            "name": "model/models.js"
+            "name": "manifest.json"
         },
         {
             "name": "util/formatter.js"
         },
         {
-            "name": "i18n/i18n.properties",
-            "raw": "i18n/i18n.properties"
+            "name": "model/models.js"
         },
         {
             "name": "controller/ServicesDetail.controller.js"
@@ -42,10 +42,6 @@
             "merged": true
         },
         {
-            "name": "controller/ServicesDetail-dbg.controller.js",
-            "isDebug": true
-        },
-        {
             "name": "util/formatter-dbg.js",
             "isDebug": true
         },
@@ -54,8 +50,12 @@
             "isDebug": true
         },
         {
-            "name": "controller/Services-dbg.controller.js",
+            "name": "controller/ServicesDetail-dbg.controller.js",
             "isDebug": true
+        },
+        {
+            "name": "i18n/i18n.properties",
+            "raw": "i18n/i18n.properties"
         },
         {
             "name": "controller/ServiceProviderDetail-dbg.controller.js",

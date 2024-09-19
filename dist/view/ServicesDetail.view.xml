@@ -26,8 +26,8 @@
 		<headerContent>
 			<m:FlexBox wrap="Wrap" fitContainer="true" alignItems="Stretch">
 				<m:VBox  class="sapUiSmallMarginEnd">
-					<m:Label text="Category ID"/>
-					<m:ObjectIdentifier title="{localModel>/SERVICECATEGORY_ID}"/>
+					<m:Label text="Proponent Organization"/>
+					<m:ObjectIdentifier title="{localModel>/SERVICECATEGORY_NAME}"/>
 				</m:VBox>
 				<layout:VerticalLayout>
 					<m:HBox  class="sapUiSmallMarginEnd">
@@ -81,6 +81,9 @@
 									<m:Column minScreenWidth="Tablet" demandPopin="true">
 										<m:Text text="Vendor Id"/>
 									</m:Column>
+										<m:Column minScreenWidth="Tablet" demandPopin="true">
+										<m:Text text="Provider Category"/>
+									</m:Column>
 									<m:Column minScreenWidth="Desktop" demandPopin="true">
 										<m:Text text="Created By"/>
 									</m:Column>
@@ -90,15 +93,16 @@
 									<m:Column minScreenWidth="Desktop" demandPopin="true">
 										<m:Text text="Updated By"/>
 									</m:Column>
-									<m:Column minScreenWidth="Desktop" demandPopin="true">
+									<m:Column minScreenWidth="Tablet" demandPopin="true">
 										<m:Text text="Updated On"/>
 									</m:Column>
 								</m:columns>
-								<m:items>
+								<m:items> 
 									<m:ColumnListItem vAlign="Middle">
 										<m:cells>
 											<m:ObjectIdentifier title="{SproviderModel>SERVICEPROVIDER_NAME}"/>
 											<m:Text text="{SproviderModel>SADARAVENDOR_ID}"/>
+												<m:Text text="{SproviderModel>PROVIDER_CATEGORY}"/>
 											<m:Text text="{SproviderModel>SERVICEPROVIDER_CREATEDBY}"/>
 											<m:ObjectIdentifier title="{path:'SproviderModel>SERVICEPROVIDER_CREATIONDATETIME', formatter: '.formatter.formatDate'}"/>
 											<m:Text text="{SproviderModel>SERVICEPROVIDER_UPDATEDBY}"/>
